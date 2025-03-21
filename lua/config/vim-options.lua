@@ -3,6 +3,7 @@ vim.g.maplocalleader = "\\"
 
 vim.opt.clipboard = "unnamedplus"     -- Use system clipboard
 vim.opt.expandtab = true              -- Use spaces instead of tabs
+vim.opt.path:append("**")
 vim.opt.softtabstop = 2               -- Number of spaces when hitting <Tab> in insert mode
 vim.opt.shiftwidth = 2                -- Number of spaces for indentation
 vim.opt.swapfile = false
