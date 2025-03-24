@@ -13,7 +13,16 @@ return {
       enabled = true,
       timeout = 3000,
     },
-    picker = { enabled = true },
+     picker = {
+      enabled = true,
+      win = {
+        input = {
+          keys = {
+           ["<Esc>"] = { "close", mode = { "n", "i" } },
+          }
+        }
+      },
+    },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = { enabled = true },
