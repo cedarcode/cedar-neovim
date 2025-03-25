@@ -13,7 +13,7 @@ return {
       enabled = true,
       timeout = 3000,
     },
-     picker = {
+    picker = {
       enabled = true,
       win = {
         input = {
@@ -21,6 +21,17 @@ return {
            ["<Esc>"] = { "close", mode = { "n", "i" } },
           }
         }
+      },
+      sources = {
+        explorer = {
+          win = {
+            list = {
+              keys = {
+                ["<C-n>"] = { "close", mode = { "n", "i" } },
+              },
+            },
+          },
+        },
       },
     },
     quickfile = { enabled = true },
