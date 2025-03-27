@@ -1,8 +1,9 @@
 -- LSP keymaps
-vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, {})
-vim.keymap.set("n", "<leader>v", "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>", {})
-vim.keymap.set("n", "<leader>r", vim.lsp.buf.references, {})
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, {})
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
+
+-- Snacks keymaps
+vim.keymap.set("n", "<C-b>", function() Snacks.picker.buffers() end)
+vim.keymap.set("n", "<C-/>", function() Snacks.picker.grep() end)
+vim.keymap.set("n", "<C-n>", function() Snacks.explorer() end)
+vim.keymap.set("n", "<C-p>", function() Snacks.picker.files() end)
