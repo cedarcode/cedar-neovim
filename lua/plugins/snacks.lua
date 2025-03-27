@@ -42,12 +42,6 @@ return {
     statuscolumn = { enabled = true },
     words = { enabled = true },
   },
-  keys = {
-    { "<C-b>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
-    { "<C-_>", function() Snacks.picker.grep() end, desc = "Grep" },
-    { "<C-n>", function() Snacks.explorer() end, desc = "File Explorer" },
-    { "<C-p>", function() Snacks.picker.files() end, desc = "Find Files" },
-  },
   init = function()
     vim.api.nvim_create_autocmd("User", {
       pattern = "VeryLazy",
