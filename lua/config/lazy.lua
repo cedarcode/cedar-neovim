@@ -19,6 +19,12 @@ vim.opt.rtp:prepend(lazypath)
 require("config/vim-options")
 require("config/keymaps")
 
+local user_custom_file = vim.fn.expand("~/.config/nvim/lua/config/user-customizations.lua")
+
+if vim.loop.fs_stat(user_custom_file) then
+  require("config/user-customizations")
+end
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
