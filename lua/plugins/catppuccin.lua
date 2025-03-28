@@ -6,7 +6,61 @@ return {
   config = function()
     require("catppuccin").setup({
       transparent_background = true,
+
+      custom_highlights = function(colors)
+        return {
+          Error = { fg = "#FFC66D" },
+          Function = { fg = colors.none },
+          Identifier = { fg = "#6D9CBE" },
+          Include = { fg = "#CC7833" },
+          PreCondit = { fg = "#CC7833" },
+          Keyword = { fg = "#CC7833" },
+          LineNr = { fg = "#26EDEA" },
+          PreProc = { fg = "#E6E1DC" },
+          Search = { fg = colors.none },
+          Special = { fg = "#FFFFFF" },
+          Statement = { fg = "#CC7833" },
+          Title = { fg = "#FFFFFF" },
+          Type = { fg = "#D6594B" },
+          Visual = { fg = "#5A647E" },
+          DiffAdd = { fg = "#E6E1DC" },
+          DiffDelete = { fg = "#E6E1DC" },
+          pythonBuiltin = { fg = "#6D9CBE" },
+          rubyAssertion = { fg = "#CC7833" },
+          rubyBlockParameter = { fg = "#FFFFFF" },
+          rubyBoolean = { fg = "#4BC4BD" },
+          rubyClass = { fg = "#FFFFFF" },
+          rubyClassBlock = { fg = "#7E7EBF" },
+          rubyComment = { fg = "#BC9458" },
+          rubyConditional = { fg = "#CC7833" },
+          rubyConstant = { fg = "#D6594B" },
+          rubyDefine = { fg = "#CC7833" },
+          rubyEntities = { fg = "#7E7EBF" },
+          rubyFloat = { fg = "#A5C261" },
+          rubyInteger = { fg = "#A5C261" },
+          rubyInterpolation = { fg = "#519F50" },
+          rubyInterpolationDelimiter = { fg = "#D6594B" },
+          rubyInstanceVariable = { fg = "#D0D0FF" },
+          rubyLocalVariableOrMethod = { fg = "#D0D0FF" },
+          rubyMethodName = { fg = "#FFC66D" },
+          rubyMacro = { fg = "#7E7EBF" },
+          rubyPredefinedConstant = { fg = "#DA4939" },
+          rubyPseudoVariable = { fg = "#FFC66D" },
+          rubyString = { fg = "#A5C261" },
+          rubyStringDelimiter = { fg = "#A5C261" },
+          rubySymbol = { fg = "#4BC4BD" },
+          xmlTag = { fg = "#E8BF6A" },
+          xmlTagName = { fg = "#E8BF6A" },
+          xmlEndTag = { fg = "#E8BF6A" },
+          mailSubject = { fg = "#A5C261" },
+          mailHeaderKey = { fg = "#FFC66D" },
+          mailEmail = { fg = "#A5C261" },
+          SpellBad = { fg = "#D70000" },
+          SpellRare = { fg = "#D75F87" },
+          SpellCap = { fg = "#D0D0FF" },
+          MatchParen = { fg = "#FFFFFF" },
+        }
+      end
     })
-    vim.cmd.colorscheme "catppuccin-mocha"
   end
 }
