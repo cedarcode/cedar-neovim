@@ -4,7 +4,7 @@
 
 - [Neovim](https://neovim.io/)
 
-We recommend getting the lastest version of `Neovim` You can install it with Homebrew:
+You can install Neovim using [Homebrew](https://brew.sh/):
 
 ```sh
 $ brew install neovim
@@ -33,7 +33,9 @@ These are some of the plugins that are currently installed, we recommend you to 
 - [vim-bundler](https://github.com/tpope/vim-bundler)
 - [vim-endwise](https://github.com/tpope/vim-endwise)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
+- [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 - [vim-rails](https://github.com/tpope/vim-rails)
+- [vim-repeat](https://github.com/tpope/vim-repeat)
 - [vim-surround](https://github.com/tpope/vim-surround)
 - [vim-unimpaired](https://github.com/tpope/vim-unimpaired)
 
