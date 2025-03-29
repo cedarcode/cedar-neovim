@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -25,12 +27,16 @@ if vim.loop.fs_stat(user_custom_file) then
   require("config/user-customizations")
 end
 
+local specs = { { import = "plugins" } }
+
+local custom_dir = vim.fn.stdpath("config") .. "/lua/plugins/custom"
+if utils.directory_has_files(custom_dir) then
+  table.insert(specs, { import = "plugins.custom" })
+end
+
 -- Setup lazy.nvim
 require("lazy").setup({
-  spec = {
-    -- import your plugins
-    { import = "plugins" },
-  },
+  spec = specs,
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
