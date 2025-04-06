@@ -3,7 +3,6 @@ return {
   "bronson/vim-trailing-whitespace",
   "github/copilot.vim",
   "pangloss/vim-javascript",
-  "tpope/vim-bundler",
   "tpope/vim-endwise",
   "tpope/vim-rails",
   "tpope/vim-repeat",

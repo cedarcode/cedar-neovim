@@ -20,6 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("config/vim-options")
 require("config/keymaps")
+require("config/autocmds")
 
 local user_custom_file = vim.fn.expand("~/.config/nvim/lua/config/user-customizations.lua")
 
