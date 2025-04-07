@@ -18,7 +18,9 @@ return {
     lazy = false,
     config = function()
       local lspconfig = require("lspconfig")
+
       lspconfig.ruby_lsp.setup({})
+      lspconfig.ts_ls.setup({})
     end,
   },
 }
