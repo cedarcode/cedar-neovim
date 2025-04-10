@@ -1,6 +1,6 @@
 return {
   "airblade/vim-gitgutter",
-  "bronson/vim-trailing-whitespace",
+  "ntpeters/vim-better-whitespace",
   "github/copilot.vim",
   "pangloss/vim-javascript",
   "tpope/vim-endwise",
@@ -8,4 +8,5 @@ return {
   "tpope/vim-repeat",
   "tpope/vim-surround",
   "tpope/vim-unimpaired",
+  "EdenEast/nightfox.nvim",
 }
