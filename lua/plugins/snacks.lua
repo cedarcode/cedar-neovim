@@ -18,6 +18,11 @@ return {
     },
     picker = {
       enabled = true,
+      formatters = {
+        file = {
+          truncate = 100,
+        },
+      },
       win = {
         input = {
           keys = {
