@@ -36,6 +36,11 @@ return {
           },
         },
       },
+      formatters = {
+        file = {
+          truncate = 100,
+        }
+      },
     },
     quickfile = { enabled = true },
     scope = { enabled = true },
