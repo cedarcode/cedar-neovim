@@ -1,6 +1,6 @@
 -- LSP keymaps
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
+vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end)
+vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end)
 
 -- Snacks keymaps
 local opts = { hidden = true }
