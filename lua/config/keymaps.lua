@@ -2,7 +2,6 @@
 vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end)
 vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end)
 
-<<<<<<< HEAD
 -- Files navigation keymaps
 local opts = { hidden = true }
 
