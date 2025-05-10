@@ -11,7 +11,7 @@ vim.keymap.set("n", "<C-n>", function() Snacks.explorer(opts) end)
 -- Pickers
 vim.keymap.set("n", "<C-p>", function() Snacks.picker.files(opts) end)
 vim.keymap.set("n", "<C-b>", function() Snacks.picker.buffers(opts) end)
-vim.keymap.set("n", "<C-g>", function() Snacks.picker.git_status(opts) end)
+vim.keymap.set("n", "<C-g>", function() Snacks.picker.git_status({ ignored = false, cmd = "rg" }) end)
 vim.keymap.set("n", "<C-q>", function() Snacks.picker.qflist(opts) end)
 vim.keymap.set({"n", "v"}, "<C-s>", function() Snacks.picker.grep_word(opts) end)
 
