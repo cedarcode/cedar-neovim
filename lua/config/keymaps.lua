@@ -9,6 +9,7 @@ vim.keymap.set("n", "<C-b>", function() Snacks.picker.buffers({ hidden = true, c
 vim.keymap.set("n", "<C-n>", ":NvimTreeFindFileToggle<CR>")
 vim.keymap.set("n", "<C-p>", function() Snacks.picker.files({ hidden = true, cmd = "rg" }) end)
 vim.keymap.set("n", "<M-p>", function() Snacks.picker.pickers({ layout = { fullscreen = true } }) end)
+vim.keymap.set("n", "<M-g>", function() Snacks.picker.git_log() end)
 vim.keymap.set("n", "<C-q>", function() Snacks.picker.qflist(opts) end)
 
 -- Fuzzy finder keymaps
