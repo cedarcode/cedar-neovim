@@ -29,6 +29,8 @@ return {
            ["<Esc>"] = { "close", mode = { "n", "i" } },
            ["<M-Down>"] = { "history_forward", mode = { "i", "n" } },
            ["<M-Up>"] = { "history_back", mode = { "i", "n" } },
+           ["<M-j>"] = { "preview_scroll_down", mode = { "n", "i" } },
+           ["<M-k>"] = { "preview_scroll_up", mode = { "n", "i" } },
           }
         }
       },
