@@ -3,7 +3,7 @@ vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end)
 vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end)
 
 -- Snacks keymaps
-local opts = { hidden = true, ignored = true, cmd = "rg", exclude= { ".git", "tmp", "node_modules" } }
+local opts = { hidden = true, ignored = true, cmd = "rg", exclude= { ".git", "tmp", "node_modules", "log", "coverage" } }
 
 -- Explorer
 vim.keymap.set("n", "<C-n>", function() Snacks.explorer(opts) end)
