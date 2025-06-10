@@ -17,3 +17,7 @@ if vim.fn.has("nvim-0.11") == 1 then
 end
 
 vim.wo.number = true
+
+vim.g.github_enterprise_urls = {
+  "gitlab.fing.edu.uy",
+}
