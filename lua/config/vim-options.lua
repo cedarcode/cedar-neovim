@@ -14,3 +14,7 @@ vim.opt.tabstop = 2                   -- Number of spaces a tab counts for
 vim.opt.undofile = true               -- Enable persistent undo
 
 vim.wo.number = true
+
+vim.g.github_enterprise_urls = {
+  "gitlab.fing.edu.uy",
+}
