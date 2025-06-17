@@ -27,6 +27,8 @@ return {
         input = {
           keys = {
            ["<Esc>"] = { "close", mode = { "n", "i" } },
+           ["<M-Down>"] = { "history_forward", mode = { "i", "n" } },
+           ["<M-Up>"] = { "history_back", mode = { "i", "n" } },
           }
         }
       },
