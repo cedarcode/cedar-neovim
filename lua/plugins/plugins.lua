@@ -1,7 +1,6 @@
 return {
   "airblade/vim-gitgutter",
   "bronson/vim-trailing-whitespace",
-  "github/copilot.vim",
   "pangloss/vim-javascript",
   "tpope/vim-endwise",
   "tpope/vim-rails",
