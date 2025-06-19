@@ -16,6 +16,12 @@ return {
     local cmp = require("cmp")
     local defaults = require("cmp.config.default")()
     local auto_select = true
+    local has_words_before = function()
+      if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then return false end
+      local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+      return col ~= 0 and vim.api.nvim_buf_get_text(0, line-1, 0, line-1, col, {})[1]:match("^%s*$") == nil
+    end
+
     return {
       completion = {
         completeopt = "menu,menuone,noinsert"
@@ -40,6 +46,7 @@ return {
         { name = "nvim_lsp" },
         { name = "path" },
         { name = "luasnip" },
+        { name = "copilot", group_index = 2},
       }, {
         { name = "buffer" },
       }),
@@ -106,12 +113,21 @@ return {
         end,
       },
       sorting = defaults.sorting,
-    },
-    cmp.setup({
-      window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
-      },
-    })
+      cmp.setup({
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
+        mapping = {
+          ["<Tab>"] = vim.schedule_wrap(function(fallback)
+            if cmp.visible() and has_words_before() then
+              cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+            else
+              fallback()
+            end
+          end),
+        },
+      })
+    }
   end,
 }
