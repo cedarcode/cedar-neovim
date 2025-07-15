@@ -6,9 +6,6 @@ vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end)
 local opts = { hidden = true, ignored = true, cmd = "rg", exclude= { ".git", "tmp", "node_modules", "log", "coverage" } }
 local opts2 = { hidden = true, ignored = true, exclude= { ".git", "tmp", "node_modules", "log", "coverage" } }
 
--- Explorer
-vim.keymap.set("n", "<C-n>", function() Snacks.explorer(opts) end)
-
 -- Pickers
 vim.keymap.set("n", "<C-p>", function() Snacks.picker.files(opts) end)
 vim.keymap.set("n", "<C-b>", function() Snacks.picker.buffers(opts) end)
