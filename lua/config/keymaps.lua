@@ -10,3 +10,9 @@ vim.keymap.set("n", "<C-/>", function() Snacks.picker.grep(opts) end)
 vim.keymap.set("n", "<C-n>", function() Snacks.explorer(opts) end)
 vim.keymap.set("n", "<C-p>", function() Snacks.picker.files({ hidden = true, cmd = "rg" }) end)
 vim.keymap.set("n", "<C-_>", "<C-/>", { remap = true })
+
+-- Diagnostics keymaps
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>ld", vim.diagnostic.setloclist)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
