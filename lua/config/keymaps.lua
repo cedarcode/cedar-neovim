@@ -22,3 +22,9 @@ vim.keymap.set("n", "<C-_>", "<C-/>", { remap = true })
 -- Git keymaps
 vim.keymap.set({"n", "v"}, "gl", ":Git blame<CR>")
 vim.keymap.set({"n", "v"}, "gb", ":GBrowse<CR>")
+
+-- Diagnostics keymaps
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>ld", vim.diagnostic.setloclist)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
