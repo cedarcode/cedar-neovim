@@ -8,6 +8,7 @@ local opts2 = { hidden = true, ignored = true, exclude= { ".git", "tmp", "node_m
 
 -- Pickers
 vim.keymap.set("n", "<C-p>", function() Snacks.picker.files(opts) end)
+vim.keymap.set("n", "<M-c>", function() Snacks.picker.files({ cwd = "~/.config/nvim" }) end)
 vim.keymap.set("n", "<C-b>", function() Snacks.picker.buffers(opts) end)
 vim.keymap.set("n", "<C-g>", function() Snacks.picker.git_status({ ignored = false, cmd = "rg" }) end)
 vim.keymap.set("n", "<M-p>", function() Snacks.picker.pickers({ layout = { fullscreen = true } }) end)
