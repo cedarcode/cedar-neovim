@@ -16,6 +16,14 @@ Or upgrade it if you already have it installed:
 $ brew upgrade neovim
 ```
 
+- [Ripgrep](https://github.com/BurntSushi/ripgrep)
+
+You can install Ripgrep using [Homebrew](https://brew.sh/):
+
+```sh
+$ brew install ripgrep
+```
+
 ## Installing
 
 ```
@@ -49,11 +57,20 @@ These are the keymaps that are currently defined:
 - `Ctrl + n` - Open a file explorer
 - `Ctrl + /` - Open grep search
 - `Ctrl + b` - Open the current buffer
+- `Ctrl + s` - Search the word under the cursor
 
 ### LSP
 
 - `gd` - Go to definition
 - `gr` - Go to references
+
+### Git
+- `Ctrl + g` - Open a file picker for git status
+- `gb` - Open the browser for the current file/commit
+- `gl` - Perform a git blame on the current file
+
+> [!TIP]
+> For the complete list of keymaps, see the [keymaps.lua](https://github.com/cedarcode/cedar-neovim/blob/main/lua/config/keymaps.lua) file.
 
 ## Customization
 
@@ -61,6 +78,28 @@ These are the keymaps that are currently defined:
 
 If you want to add custom keymaps or options, you can do so by creating a file at `~/.config/nvim/lua/config/user-customizations.lua` and adding your customizations there.
 
+For example, see the following structure:
+
+```lua
+-- ~/.config/nvim/lua/config/user-customizations.lua
+vim.keymap.set("n", "<leader>e", "Some custom command",)
+```
+
 ### Add custom plugins
 
 If you want to add custom plugins (and not track them in this repository), you can do so by creating a file at `~/.config/nvim/lua/plugins/custom/` directory and adding your custom plugins there.
+
+For example, see the following structure:
+
+```lua
+-- ~/.config/nvim/lua/plugins/custom/myplugin.lua
+return {
+  "myusername/myplugin",
+  config = function()
+      -- Your custom configuration here
+  end,
+}
+```
+
+> [!IMPORTANT]
+> Note that we are using [Lazy.nvim](https://github.com/folke/lazy.nvim) to manage plugins, so you can use the same syntax as in the `Lazy.nvim` documentation.
