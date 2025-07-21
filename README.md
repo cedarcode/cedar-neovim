@@ -26,11 +26,16 @@ $ git clone https://github.com/cedarcode/cedar-neovim ~/.config/nvim
 
 ## Plugins
 
+### Plugin management
+
+We are using [Lazy.nvim](https://github.com/folke/lazy.nvim) to manage plugins.
+
+### Plugins included
+
 These are some of the plugins that are currently installed, we recommend you to read their documentation to get the most out of them:
 
 - [catppuccin](https://github.com/catppuccin/nvim)
 - [copilot.vim](https://github.com/github/copilot.vim)
-- [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [snacks.nvim](https://github.com/folke/snacks.nvim)
 - [vim-bundler](https://github.com/tpope/vim-bundler)
 - [vim-endwise](https://github.com/tpope/vim-endwise)
