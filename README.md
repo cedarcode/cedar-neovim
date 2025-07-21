@@ -10,12 +10,6 @@ You can install Neovim using [Homebrew](https://brew.sh/):
 $ brew install neovim
 ```
 
-Or upgrade it if you already have it installed:
-
-```sh
-$ brew upgrade neovim
-```
-
 - [Ripgrep](https://github.com/BurntSushi/ripgrep)
 
 You can install Ripgrep using [Homebrew](https://brew.sh/):
