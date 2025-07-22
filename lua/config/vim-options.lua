@@ -12,6 +12,8 @@ vim.opt.shiftwidth = 2                -- Number of spaces for indentation
 vim.opt.swapfile = false
 vim.opt.tabstop = 2                   -- Number of spaces a tab counts for
 vim.opt.undofile = true               -- Enable persistent undo
-vim.opt.winborder = 'rounded'         -- Use rounded borders for windows
+if vim.fn.has("nvim-0.11") == 1 then
+  vim.opt.winborder = 'rounded'         -- Use rounded borders for windows
+end
 
 vim.wo.number = true
