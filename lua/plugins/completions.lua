@@ -106,6 +106,12 @@ return {
         end,
       },
       sorting = defaults.sorting,
-    }
+    },
+    cmp.setup({
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
+    })
   end,
 }
