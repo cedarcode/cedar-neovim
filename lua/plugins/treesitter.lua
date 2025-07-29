@@ -8,9 +8,12 @@ return {
       ensure_installed = { "c", "lua", "vim", "vimdoc", "ruby", "javascript", "html", "embedded_template", "typescript", "tsx", "css", "json", "yaml" },
       highlight = {
         enable = true,
-        additional_vim_regex_highlighting = { "ruby", "embedded_template" }
+        disable = { "ruby" },
       },
-      indent = { enable = true },
+      indent = {
+        enable = true,
+        disable = { "ruby" },
+      },
     })
   end
 }
