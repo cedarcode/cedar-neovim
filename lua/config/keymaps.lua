@@ -17,10 +17,6 @@ vim.keymap.set("n", "<C-/>", function() Snacks.picker.grep(opts) end)
 vim.keymap.set("n", "<C-_>", "<C-/>", { remap = true })
 vim.keymap.set({"n", "v"}, "<C-s>", function() Snacks.picker.grep_word(opts) end)
 
--- Git keymaps
-vim.keymap.set({"n", "v"}, "gl", ":Git blame<CR>")
-vim.keymap.set({"n", "v"}, "gb", ":GBrowse<CR>")
-
 -- Diagnostics keymaps
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float)
 vim.keymap.set("n", "<leader>ld", vim.diagnostic.setloclist)
