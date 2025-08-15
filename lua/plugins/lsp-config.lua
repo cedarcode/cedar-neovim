@@ -18,16 +18,26 @@ return {
     lazy = false,
     config = function()
       local lspconfig = require("lspconfig")
+      local utils = require("utils")
 
-      lspconfig.ruby_lsp.setup({
-        init_options = {
-          addonSettings = {
-            ["Ruby LSP Rails"] = {
-              enablePendingMigrationsPrompt = false,
+      local function setup_ruby_lsp()
+        lspconfig.ruby_lsp.setup({
+          init_options = {
+            addonSettings = {
+              ["Ruby LSP Rails"] = {
+                enablePendingMigrationsPrompt = false,
+              },
             },
           },
-        },
-      })
+        })
+      end
+
+      if utils.executable("ruby-lsp") then
+        setup_ruby_lsp()
+      else
+        utils.install_ruby_lsp(function() setup_ruby_lsp() end)
+      end
+
       lspconfig.ts_ls.setup({})
     end,
   },
