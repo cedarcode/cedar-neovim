@@ -17,3 +17,8 @@ if vim.fn.has("nvim-0.11") == 1 then
 end
 
 vim.wo.number = true
+
+-- Here we set the custom GitHub Enterprise root URLs for vim-rhubarb
+vim.g.github_enterprise_urls = {
+  "gitlab.fing.edu.uy",
+}
