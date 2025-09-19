@@ -25,3 +25,9 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set({"n", "v"}, "gl", ":Git blame<CR>")
 vim.keymap.set({"n", "v"}, "gb", ":GBrowse<CR>")
 vim.keymap.set("n", "<C-g>", function() Snacks.picker.git_status({ ignored = false, cmd = "rg" }) end)
+
+vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
