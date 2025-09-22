@@ -35,7 +35,7 @@ We are using [Lazy.nvim](https://github.com/folke/lazy.nvim) to manage plugins.
 These are some of the plugins that are currently installed, we recommend you to read their documentation to get the most out of them:
 
 - [catppuccin](https://github.com/catppuccin/nvim)
-- [copilot.vim](https://github.com/github/copilot.vim)
+- [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
 - [snacks.nvim](https://github.com/folke/snacks.nvim)
 - [vim-bundler](https://github.com/tpope/vim-bundler)
 - [vim-endwise](https://github.com/tpope/vim-endwise)

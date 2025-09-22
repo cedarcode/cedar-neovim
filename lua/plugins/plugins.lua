@@ -1,6 +1,5 @@
 return {
   "airblade/vim-gitgutter",
-  "github/copilot.vim",
   "pangloss/vim-javascript",
   "tpope/vim-endwise",
   "tpope/vim-rails",
