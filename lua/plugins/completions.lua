@@ -31,7 +31,7 @@ return {
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
         ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-        ["<CR>"] = cmp.mapping.confirm(),
+        ["<Tab>"] = cmp.mapping.confirm(),
         ["<C-CR>"] = function(fallback)
           cmp.abort()
           fallback()
@@ -136,7 +136,7 @@ return {
           documentation = cmp.config.window.bordered(),
         },
         mapping = {
-          ["<CR>"] = vim.schedule_wrap(function(fallback)
+          ["<Tab>"] = vim.schedule_wrap(function(fallback)
             if cmp.visible() and has_words_before() then
               cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
             else
