@@ -17,28 +17,24 @@ return {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      local lspconfig = require("lspconfig")
       local utils = require("utils")
 
-      local function setup_ruby_lsp()
-        lspconfig.ruby_lsp.setup({
-          init_options = {
-            addonSettings = {
-              ["Ruby LSP Rails"] = {
-                enablePendingMigrationsPrompt = false,
-              },
-            },
-          },
-        })
+      if not utils.executable("ruby-lsp") then
+        utils.install_ruby_lsp()
       end
 
-      if utils.executable("ruby-lsp") then
-        setup_ruby_lsp()
-      else
-        utils.install_ruby_lsp(function() setup_ruby_lsp() end)
-      end
+      vim.lsp.config('ruby_lsp', {
+        init_options = {
+          addonSettings = {
+            ["Ruby LSP Rails"] = {
+              enablePendingMigrationsPrompt = false,
+            }
+          }
+        }
+      })
 
-      lspconfig.ts_ls.setup({})
+      vim.lsp.enable('ruby_lsp')
+      vim.lsp.enable('ts_ls')
     end,
   },
 }

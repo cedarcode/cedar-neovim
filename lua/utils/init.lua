@@ -5,7 +5,7 @@ function M.directory_has_files(dir)
   return handle and vim.loop.fs_scandir_next(handle) ~= nil
 end
 
-function M.install_ruby_lsp(on_success)
+function M.install_ruby_lsp()
   if not M.executable("ruby") then
     return
   end
@@ -24,7 +24,6 @@ function M.install_ruby_lsp(on_success)
     on_exit = function(_, code)
       if code == 0 then
         vim.notify("ruby-lsp installed successfully!", vim.log.levels.INFO)
-        on_success()
       else
         vim.notify("Failed to install ruby-lsp", vim.log.levels.ERROR)
       end
