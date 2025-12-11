@@ -35,17 +35,6 @@ return {
           }
         }
       },
-      sources = {
-        explorer = {
-          win = {
-            list = {
-              keys = {
-                ["<C-n>"] = { "close", mode = { "n", "i" } },
-              },
-            },
-          },
-        },
-      },
     },
     quickfile = { enabled = true },
     scope = { enabled = true },
