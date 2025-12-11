@@ -23,6 +23,9 @@ return {
           truncate = 100,
         },
       },
+      layout = {
+        fullscreen = true,
+      },
       win = {
         input = {
           keys = {
