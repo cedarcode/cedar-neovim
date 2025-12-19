@@ -6,7 +6,7 @@ vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end)
 local opts = { hidden = true }
 
 vim.keymap.set("n", "<C-b>", function() Snacks.picker.buffers({ hidden = true, cmd = "rg" }) end)
-vim.keymap.set("n", "<C-n>", ":NvimTreeFindFileToggle<CR>")
+vim.keymap.set("n", "<C-n>", function() Snacks.explorer({ hidden = true, layout = { fullscreen = false } }) end)
 vim.keymap.set("n", "<C-p>", function() Snacks.picker.files({ hidden = true, cmd = "rg" }) end)
 vim.keymap.set("n", "<M-p>", function() Snacks.picker.pickers() end)
 
