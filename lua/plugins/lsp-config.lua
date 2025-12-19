@@ -1,6 +1,17 @@
 return {
   "neovim/nvim-lspconfig",
   lazy = false,
+  opts = {
+    -- make sure mason installs the server
+    servers = {
+      ts_ls = {
+        enabled = true,
+      },
+      herb_ls = {
+        enabled = true,
+      },
+    },
+  },
   config = function()
     local utils = require("utils")
 
@@ -19,6 +30,5 @@ return {
     })
 
     vim.lsp.enable('ruby_lsp')
-    vim.lsp.enable('ts_ls')
   end,
 }
