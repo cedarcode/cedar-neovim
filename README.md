@@ -36,6 +36,7 @@ These are some of the plugins that are currently installed, we recommend you to 
 
 - [catppuccin](https://github.com/catppuccin/nvim)
 - [copilot.vim](https://github.com/github/copilot.vim)
+- [mini.surround](https://github.com/nvim-mini/mini.nvim)
 - [snacks.nvim](https://github.com/folke/snacks.nvim)
 - [vim-bundler](https://github.com/tpope/vim-bundler)
 - [vim-endwise](https://github.com/tpope/vim-endwise)
@@ -43,7 +44,6 @@ These are some of the plugins that are currently installed, we recommend you to 
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 - [vim-rails](https://github.com/tpope/vim-rails)
 - [vim-repeat](https://github.com/tpope/vim-repeat)
-- [vim-surround](https://github.com/tpope/vim-surround)
 - [vim-unimpaired](https://github.com/tpope/vim-unimpaired)
 
 ## Keymaps
