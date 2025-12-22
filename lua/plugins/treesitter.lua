@@ -8,12 +8,14 @@ return {
       ensure_installed = { "c", "lua", "vim", "vimdoc", "ruby", "javascript", "html", "embedded_template", "typescript", "tsx", "css", "json", "yaml", "glimmer" },
       highlight = {
         enable = true,
-        disable = { "ruby" },
+        disable = { "ruby", "yaml" },
       },
       indent = {
         enable = true,
         disable = { "ruby" },
       },
     })
+
+    vim.treesitter.language.register('yaml', { 'eruby.yaml' })
   end
 }
