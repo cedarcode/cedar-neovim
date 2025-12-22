@@ -3,7 +3,6 @@ return {
   "github/copilot.vim",
   "pangloss/vim-javascript",
   "tpope/vim-endwise",
-  "tpope/vim-rails",
   "tpope/vim-repeat",
   "tpope/vim-unimpaired",
 }

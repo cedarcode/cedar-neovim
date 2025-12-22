@@ -42,7 +42,6 @@ These are some of the plugins that are currently installed, we recommend you to 
 - [vim-endwise](https://github.com/tpope/vim-endwise)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-- [vim-rails](https://github.com/tpope/vim-rails)
 - [vim-repeat](https://github.com/tpope/vim-repeat)
 - [vim-unimpaired](https://github.com/tpope/vim-unimpaired)
 
