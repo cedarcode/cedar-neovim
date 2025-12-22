@@ -11,6 +11,15 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
   },
+  -- Not all LSP servers add brackets when completing a function.
+  -- To better deal with this, LazyVim adds a custom option to cmp,
+  -- that you can configure. For example:
+  --
+  -- ```lua
+  -- opts = {
+  --   auto_brackets = { "python" }
+  -- }
+  -- ```
   opts = function()
     require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -19,7 +28,7 @@ return {
     local defaults = require("cmp.config.default")()
     local auto_select = true
     return {
-      auto_brackets = {}, -- configure any filetype to auto add brackets
+      auto_brackets = { "ruby" }, -- configure any filetype to auto add brackets
       completion = {
         completeopt = "menu,menuone,noinsert" .. (auto_select and "" or ",noselect"),
       },
@@ -32,10 +41,14 @@ return {
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<CR>"] = cmp.mapping.confirm({ select = auto_select }),
         ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+        -- ["<S-CR>"] = LazyVim.cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         ["<C-CR>"] = function(fallback)
           cmp.abort()
           fallback()
-        end, -- For adding a newline when the completion menu is open
+        end,
+        -- ["<tab>"] = function(fallback)
+        --   return LazyVim.cmp.map({ "snippet_forward", "ai_accept" }, fallback)()
+        -- end,
       }),
       snippet = {
         expand = function(args)
@@ -43,6 +56,7 @@ return {
         end,
       },
       sources = cmp.config.sources({
+        -- { name = "lazydev" },
         { name = "nvim_lsp" },
         { name = "path" },
         { name = "luasnip" },
