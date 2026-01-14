@@ -30,5 +30,8 @@ return {
     })
 
     vim.lsp.enable('ruby_lsp')
+
+    -- Register nvim-cmp lsp capabilities
+    vim.lsp.config("*", { capabilities = require("cmp_nvim_lsp").default_capabilities() })
   end,
 }
