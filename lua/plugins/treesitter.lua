@@ -11,8 +11,7 @@ return {
   config = function(_, opts)
     local ts = require("nvim-treesitter")
 
-    local installed = ts.get_installed and ts.get_installed()
-    if not installed then
+    if not ts.install then
       vim.notify(
         "Please update nvim-treesitter to the main branch and run :TSUpdate",
         vim.log.levels.ERROR
@@ -21,15 +20,7 @@ return {
     end
 
     ts.setup(opts)
-
-    -- Install missing parsers
-    local to_install = vim.tbl_filter(function(lang)
-      return not vim.tbl_contains(installed, lang)
-    end, opts.ensure_installed or {})
-
-    if #to_install > 0 then
-      ts.install(to_install)
-    end
+    ts.install(opts.ensure_installed or {})
 
     vim.api.nvim_create_autocmd("FileType", {
       group = vim.api.nvim_create_augroup("treesitter_features", { clear = true }),
