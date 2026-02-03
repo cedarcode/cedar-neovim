@@ -19,7 +19,6 @@ return {
       return
     end
 
-    ts.setup(opts)
     ts.install(opts.ensure_installed or {})
 
     vim.api.nvim_create_autocmd("FileType", {
