@@ -4,7 +4,7 @@ return {
   build = ":TSUpdate",
   lazy = false,
   opts = {
-    highlight = { enable = true, disable = { "ruby", "yaml" } },
+    highlight = { enable = true, disable = { "yaml" } },
     indent = { enable = true, disable = { "ruby" } },
     ensure_installed = { "c", "lua", "vim", "vimdoc", "ruby", "javascript", "html", "embedded_template", "typescript", "tsx", "css", "json", "yaml", "glimmer" },
   },
