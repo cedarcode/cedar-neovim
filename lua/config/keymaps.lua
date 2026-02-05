@@ -31,6 +31,9 @@ vim.keymap.set("n", "gsh", function() vim.cmd("Git show " .. vim.fn.expand("<cwo
 vim.keymap.set("n", "<leader>q", function() require("quicker").toggle() end, { desc = "Toggle quickfix", })
 vim.keymap.set("n", "<leader>l", function() require("quicker").toggle({ loclist = true }) end, { desc = "Toggle loclist", })
 
+vim.keymap.set({"n", "v"}, "<leader>tf", ":TestFile<CR>")
+vim.keymap.set({"n", "v"}, "<leader>tn", ":TestNearest<CR>")
+
 -- Models (all locations: app, engines/*/app/models, packs/*/app/models)
 -- Excludes: test directories, _test.rb files, factories
 vim.keymap.set("n", "<leader>rm", function()

@@ -7,6 +7,7 @@ return {
     "tpope/vim-rails",
     "tpope/vim-repeat",
     "tpope/vim-unimpaired",
+    "vim-test/vim-test",
   },
   {
     'akinsho/git-conflict.nvim', version = "*", config = true
