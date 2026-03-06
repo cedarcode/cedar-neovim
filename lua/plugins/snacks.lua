@@ -23,6 +23,9 @@ return {
           truncate = 100,
         },
       },
+      layout = {
+        fullscreen = true,
+      },
       win = {
         input = {
           keys = {
@@ -31,17 +34,6 @@ return {
            ["<M-Up>"] = { "history_back", mode = { "i", "n" } },
           }
         }
-      },
-      sources = {
-        explorer = {
-          win = {
-            list = {
-              keys = {
-                ["<C-n>"] = { "close", mode = { "n", "i" } },
-              },
-            },
-          },
-        },
       },
     },
     quickfile = { enabled = true },
