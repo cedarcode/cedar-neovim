@@ -11,7 +11,8 @@ return {
   config = function(_, opts)
     local ts = require("nvim-treesitter")
 
-    if not ts.install then
+    local installed = ts.get_installed and ts.get_installed()
+    if not installed then
       vim.notify(
         "Please update nvim-treesitter to the main branch and run :TSUpdate",
         vim.log.levels.ERROR
