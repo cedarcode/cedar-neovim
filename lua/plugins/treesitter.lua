@@ -20,7 +20,7 @@ return {
       return
     end
 
-    ts.install(opts.ensure_installed or {})
+    ts.install(opts.ensure_installed)
 
     vim.api.nvim_create_autocmd("FileType", {
       group = vim.api.nvim_create_augroup("treesitter_features", { clear = true }),
