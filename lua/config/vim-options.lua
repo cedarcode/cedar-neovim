@@ -3,7 +3,7 @@ vim.g.maplocalleader = "\\"
 
 vim.opt.clipboard = "unnamedplus"     -- Use system clipboard
 vim.opt.expandtab = true              -- Use spaces instead of tabs
-vim.opt.foldmethod = "syntax"
+vim.opt.foldmethod = "expr"
 vim.opt.foldenable = false            -- Start with folds open
 vim.opt.foldexpr = "v:lua.vim.lsp.foldexpr()"
 vim.opt.path:append("**")
