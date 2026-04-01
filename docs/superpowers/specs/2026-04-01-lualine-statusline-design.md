@@ -33,12 +33,16 @@ Add a full, information-dense powerline-style statusline using lualine.nvim with
 
 ### 1. `lua/plugins/lualine.lua` (new file)
 
-New plugin spec for lualine.nvim:
+New plugin spec for lualine.nvim. Use `lazy = false` (not `VeryLazy`) because lualine is a UI element — deferring it causes a visible flash of the default statusline on startup before lualine takes over.
+
+`globalstatus = true` renders a single shared statusline across all splits (Neovim 0.7+). With this enabled, `inactive_sections` is never used and should be omitted to avoid dead config.
+
+Setting `theme = "catppuccin"` is sufficient for full color coordination — lualine ships a built-in Catppuccin theme file and no changes to `catppuccin.lua` are needed. The existing `transparent_background = true` in catppuccin does not affect lualine because lualine sets highlight group backgrounds directly; the statusline bar will be opaque and styled correctly.
 
 ```lua
 return {
   "nvim-lualine/lualine.nvim",
-  event = "VeryLazy",
+  lazy = false,
   opts = {
     options = {
       theme = "catppuccin",
@@ -71,32 +75,16 @@ return {
       lualine_y = { { "filetype", icon_only = false } },
       lualine_z = { "location", "progress" },
     },
-    inactive_sections = {
-      lualine_c = { { "filename", path = 1 } },
-      lualine_x = { "location" },
-    },
   },
 }
 ```
 
 Key decisions:
-- `event = "VeryLazy"` — deferred load, does not affect startup time
-- `globalstatus = true` — single statusline across all splits (Neovim 0.7+), cleaner look
+- `lazy = false` — load immediately so the statusline is present from the first frame
+- `globalstatus = true` — single statusline across all splits; `inactive_sections` omitted as it is irrelevant with this setting
 - `path = 1` on filename — shows relative path, useful when navigating many files
-- LSP client name rendered via a custom function using `vim.lsp.get_clients` (the current Neovim 0.10+ API, not the deprecated `get_active_clients`)
-
-### 2. `lua/plugins/catppuccin.lua` (update)
-
-Add `lualine = true` to the integrations table so Catppuccin generates lualine highlight groups:
-
-```lua
-integrations = {
-  copilot_vim = true,
-  gitgutter = true,
-  lualine = true,
-  snacks = true,
-},
-```
+- LSP client name via `vim.lsp.get_clients` — the correct Neovim 0.10+ API (`get_active_clients` was deprecated in 0.10, removed in 0.11)
+- No `catppuccin.lua` changes required — `theme = "catppuccin"` loads lualine's built-in Catppuccin theme directly
 
 ## What This Gives You
 
@@ -112,3 +100,4 @@ integrations = {
 
 - No tabline / bufferline (out of scope)
 - No custom per-project overrides
+- No changes to `catppuccin.lua`
