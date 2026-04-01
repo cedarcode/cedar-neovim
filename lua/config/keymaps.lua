@@ -1,38 +1,36 @@
 -- LSP keymaps
-vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end)
-vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end)
+vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, { desc = "Go to definition" })
+vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, { desc = "Go to references" })
 
 -- Files navigation keymaps
-local opts = { hidden = true }
-
-vim.keymap.set("n", "<C-b>", function() Snacks.picker.buffers({ hidden = true, cmd = "rg" }) end)
-vim.keymap.set("n", "<C-n>", ":NvimTreeFindFileToggle<CR>")
-vim.keymap.set("n", "<C-p>", function() Snacks.picker.files({ hidden = true, cmd = "rg" }) end)
-vim.keymap.set("n", "<M-p>", function() Snacks.picker.pickers() end)
+vim.keymap.set("n", "<C-b>", function() Snacks.picker.buffers({ hidden = true, cmd = "rg" }) end, { desc = "Find buffers" })
+vim.keymap.set("n", "<C-n>", ":NvimTreeFindFileToggle<CR>", { desc = "Toggle file tree" })
+vim.keymap.set("n", "<C-p>", function() Snacks.picker.files({ hidden = true, cmd = "rg" }) end, { desc = "Find files" })
+vim.keymap.set("n", "<M-p>", function() Snacks.picker.pickers() end, { desc = "All pickers" })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- Fuzzy finder keymaps
-vim.keymap.set("n", "<C-/>", function() Snacks.picker.grep(opts) end)
+vim.keymap.set("n", "<C-/>", function() Snacks.picker.grep({ hidden = true }) end, { desc = "Grep files" })
 vim.keymap.set("n", "<C-_>", "<C-/>", { remap = true })
 
 -- Diagnostics keymaps
-vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float)
-vim.keymap.set("n", "<leader>ld", vim.diagnostic.setloclist)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show diagnostic float" })
+vim.keymap.set("n", "<leader>ld", vim.diagnostic.setloclist, { desc = "Diagnostics to loclist" })
+vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end, { desc = "Previous diagnostic" })
+vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end, { desc = "Next diagnostic" })
 
 -- Git keymaps
-vim.keymap.set({"n", "v"}, "gl", ":Git blame<CR>")
-vim.keymap.set({"n", "v"}, "gb", ":GBrowse<CR>")
-vim.keymap.set("n", "<C-g>", function() Snacks.picker.git_status({ ignored = false, cmd = "rg" }) end)
+vim.keymap.set({"n", "v"}, "gl", ":Git blame<CR>", { desc = "Git blame" })
+vim.keymap.set({"n", "v"}, "gb", ":GBrowse<CR>", { desc = "Open in GitHub" })
+vim.keymap.set("n", "<C-g>", function() Snacks.picker.git_status({ ignored = false, cmd = "rg" }) end, { desc = "Git status" })
 vim.keymap.set("n", "gsh", function() vim.cmd("Git show " .. vim.fn.expand("<cword>")) end, { desc = "Git show commit" })
 
 -- Quicker keymaps
 vim.keymap.set("n", "<leader>q", function() require("quicker").toggle() end, { desc = "Toggle quickfix", })
 vim.keymap.set("n", "<leader>l", function() require("quicker").toggle({ loclist = true }) end, { desc = "Toggle loclist", })
 
-vim.keymap.set({"n", "v"}, "<leader>tf", ":TestFile<CR>")
-vim.keymap.set({"n", "v"}, "<leader>tn", ":TestNearest<CR>")
+vim.keymap.set({"n", "v"}, "<leader>tf", ":TestFile<CR>", { desc = "Run test file" })
+vim.keymap.set({"n", "v"}, "<leader>tn", ":TestNearest<CR>", { desc = "Run nearest test" })
 
 -- Models (all locations: app, engines/*/app/models, packs/*/app/models)
 -- Excludes: test directories, _test.rb files, factories
@@ -392,4 +390,4 @@ vim.keymap.set({"n", "v"}, "<C-s>", function()
       "--glob", "!**/*_test.rb",
     },
   })
-end)
+end, { desc = "Search word under cursor" })
