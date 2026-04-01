@@ -8,8 +8,6 @@ return {
       utils.install_ruby_lsp()
     end
 
-    utils.install_ruby_lsp_rubocop()
-
     vim.lsp.config('ruby_lsp', {
       init_options = {
         addonSettings = {
