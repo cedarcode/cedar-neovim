@@ -33,7 +33,7 @@ return {
       }),
       snippet = {
         expand = function(args)
-          require("luasnip").lsp_expand(args.body)
+          vim.snippet.expand(args.body)
         end,
       },
       sources = cmp.config.sources({
