@@ -25,6 +25,31 @@ vim.keymap.set({"n", "v"}, "gb", ":GBrowse<CR>", { desc = "Open in GitHub" })
 vim.keymap.set("n", "<C-g>", function() Snacks.picker.git_status({ ignored = false, cmd = "rg" }) end, { desc = "Git status" })
 vim.keymap.set("n", "gsh", function() vim.cmd("Git show " .. vim.fn.expand("<cword>")) end, { desc = "Git show commit" })
 
+vim.api.nvim_create_user_command("GVsplitBranch", function(opts)
+  local branch = opts.args ~= "" and opts.args or "main"
+  local git_root = vim.fn.FugitiveWorkTree()
+  if git_root == "" then
+    vim.notify("Not inside a git repository", vim.log.levels.ERROR)
+    return
+  end
+  local abs_path = vim.fn.expand("%:p")
+  local rel_path = abs_path:sub(#git_root + 2)
+  if rel_path == "" then
+    vim.notify("Not a git-tracked file", vim.log.levels.ERROR)
+    return
+  end
+  vim.cmd("Gvsplit " .. branch .. ":" .. rel_path)
+end, {
+  nargs = "?",
+  complete = function(arglead)
+    local branches = vim.fn.systemlist("git branch --all --format='%(refname:short)' 2>/dev/null")
+    return vim.tbl_filter(function(b) return b:find(arglead, 1, true) end, branches)
+  end,
+  desc = "Open current file in vsplit at branch",
+})
+
+vim.keymap.set("n", "<leader>gv", ":GVsplitBranch ", { desc = "Vsplit file at branch" })
+
 -- Quicker keymaps
 vim.keymap.set("n", "<leader>q", function() require("quicker").toggle() end, { desc = "Toggle quickfix", })
 vim.keymap.set("n", "<leader>l", function() require("quicker").toggle({ loclist = true }) end, { desc = "Toggle loclist", })
