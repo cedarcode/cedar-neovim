@@ -6,7 +6,7 @@ return {
   opts = {
     highlight = { enable = true, disable = { "yaml" } },
     indent = { enable = true, disable = { "ruby" } },
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "ruby", "javascript", "html", "embedded_template", "typescript", "tsx", "css", "json", "yaml", "glimmer" },
+    ensure_installed = { "c", "lua", "vim", "vimdoc", "ruby", "javascript", "html", "embedded_template", "typescript", "tsx", "css", "json", "yaml", "glimmer", "graphql" },
   },
   config = function(_, opts)
     local ts = require("nvim-treesitter")
