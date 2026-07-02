@@ -28,6 +28,13 @@ if vim.loop.fs_stat(user_custom_file) then
   require("config/user-customizations")
 end
 
+-- Machine-local customizations, not shared across machines
+local user_custom_local_file = vim.fn.expand("~/.config/nvim/lua/config/user-customizations.local.lua")
+
+if vim.loop.fs_stat(user_custom_local_file) then
+  dofile(user_custom_local_file)
+end
+
 local specs = { { import = "plugins" } }
 
 local custom_dir = vim.fn.stdpath("config") .. "/lua/plugins/custom"
