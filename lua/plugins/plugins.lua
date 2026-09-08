@@ -1,8 +1,6 @@
 return {
   {
-    "airblade/vim-gitgutter",
     "github/copilot.vim",
-    "pangloss/vim-javascript",
     "tpope/vim-endwise",
     "tpope/vim-rails",
     "tpope/vim-repeat",
@@ -30,5 +28,4 @@ return {
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
-  { 'nvim-mini/mini.operators', version = '*' },
 }

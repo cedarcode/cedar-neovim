@@ -15,7 +15,6 @@ return {
     -- require("luasnip.loaders.from_vscode").lazy_load()
     local cmp = require("cmp")
     local defaults = require("cmp.config.default")()
-    local auto_select = true
     return {
       completion = {
         completeopt = "menu,menuone,noinsert"
@@ -37,6 +36,7 @@ return {
         end,
       },
       sources = cmp.config.sources({
+        { name = "lazydev", group_index = 0 },
         { name = "nvim_lsp" },
         -- { name = "path" },
         -- { name = "luasnip" },
@@ -106,12 +106,10 @@ return {
         end,
       },
       sorting = defaults.sorting,
-    },
-    cmp.setup({
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       },
-    })
+    }
   end,
 }

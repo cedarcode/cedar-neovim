@@ -29,7 +29,7 @@ autocmd("BufEnter", {
 
     local root = root_cache[path] or find_root(path)
 
-    if root then
+    if root and root ~= vim.fn.getcwd() then
       vim.cmd('silent! cd ' .. vim.fn.fnameescape(root))
     end
   end,

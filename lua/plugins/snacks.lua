@@ -3,7 +3,7 @@ local chosen_splash
 return {
   "folke/snacks.nvim",
   dependencies = {
-    "echasnovski/mini.icons",
+    "nvim-mini/mini.icons",
     "amansingh-afk/milli.nvim",
   },
   priority = 1000,

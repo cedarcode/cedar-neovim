@@ -8,7 +8,7 @@ return {
       transparent_background = true,
       integrations = {
         copilot_vim = true,
-        gitgutter = true,
+        gitsigns = true,
         snacks = true,
       },
     })
